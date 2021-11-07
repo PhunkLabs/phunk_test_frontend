@@ -66,7 +66,7 @@ function App() {
       .mint(1)
       .send({
         gasLimit: "285000",
-        to: "0x4321bcD53c61A8172C3647e1c979B2a752Da8aE4",
+        to: "0xF6Ef40B4B84423DCcE14821e77a9D08Ac94C7146",
         from: blockchain.account,
         value: blockchain.web3.utils.toWei((0.1 * _amount).toString(), "ether"),
       })
@@ -110,7 +110,7 @@ function App() {
             <s.TextTitle
               style={{ textAlign: "center", fontSize: 35, fontWeight: "bold" }}
             >
-              {data.totalSupply}/100
+              {data.totalSupply}/4200
             </s.TextTitle>
           </s.Container>
           <s.SpacerMedium />
@@ -196,7 +196,7 @@ function App() {
         <s.SpacerSmall />
         <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>
           <s.TextDescription style={{ textAlign: "center", fontSize: 9 }}>
-            Please make sure you are connected to the right network (BSC Test Net) and the correct address. Please note: Once you make the
+            Test Version 2! Please make sure you are connected to the right network (BSC Test Net) and the correct address. Please note: Once you make the
             purchase, you cannot undo this action.
           </s.TextDescription>
           <s.SpacerSmall />
