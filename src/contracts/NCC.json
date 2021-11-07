@@ -1,6 +1,24 @@
 [
     {
-        "inputs": [],
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "_name",
+                "type": "string"
+            }, {
+                "internalType": "string",
+                "name": "_symbol",
+                "type": "string"
+            }, {
+                "internalType": "string",
+                "name": "_initBaseURI",
+                "type": "string"
+            }, {
+                "internalType": "string",
+                "name": "_initNotRevealedUri",
+                "type": "string"
+            }
+        ],
         "stateMutability": "nonpayable",
         "type": "constructor"
     },
@@ -71,18 +89,6 @@
         "anonymous": false,
         "inputs": [
             {
-                "indexed": false,
-                "internalType": "address",
-                "name": "account",
-                "type": "address"
-            }
-        ],
-        "name": "Paused",
-        "type": "event"
-    }, {
-        "anonymous": false,
-        "inputs": [
-            {
                 "indexed": true,
                 "internalType": "address",
                 "name": "from",
@@ -102,44 +108,14 @@
         "name": "Transfer",
         "type": "event"
     }, {
-        "anonymous": false,
         "inputs": [
             {
-                "indexed": false,
                 "internalType": "address",
-                "name": "account",
+                "name": "",
                 "type": "address"
             }
         ],
-        "name": "Unpaused",
-        "type": "event"
-    }, {
-        "inputs": [],
-        "name": "MAX_NFT_SUPPLY",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    }, {
-        "inputs": [],
-        "name": "NB_TEAM_NFT",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    }, {
-        "inputs": [],
-        "name": "_price1",
+        "name": "addressMintedBalance",
         "outputs": [
             {
                 "internalType": "uint256",
@@ -185,15 +161,39 @@
         "type": "function"
     }, {
         "inputs": [],
-        "name": "claim10NFT",
-        "outputs": [],
-        "stateMutability": "nonpayable",
+        "name": "baseExtension",
+        "outputs": [
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "stateMutability": "view",
         "type": "function"
     }, {
         "inputs": [],
-        "name": "claimNFT",
-        "outputs": [],
-        "stateMutability": "nonpayable",
+        "name": "baseURI",
+        "outputs": [
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    }, {
+        "inputs": [],
+        "name": "cost",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
         "type": "function"
     }, {
         "inputs": [
@@ -209,36 +209,6 @@
                 "internalType": "address",
                 "name": "",
                 "type": "address"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    }, {
-        "inputs": [
-            {
-                "internalType": "address",
-                "name": "_owner",
-                "type": "address"
-            }
-        ],
-        "name": "getNFTBalance",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    }, {
-        "inputs": [],
-        "name": "getNFTPrice",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
             }
         ],
         "stateMutability": "view",
@@ -266,8 +236,56 @@
         "stateMutability": "view",
         "type": "function"
     }, {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_user",
+                "type": "address"
+            }
+        ],
+        "name": "isWhitelisted",
+        "outputs": [
+            {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    }, {
         "inputs": [],
-        "name": "mintNFT",
+        "name": "maxMintAmount",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    }, {
+        "inputs": [],
+        "name": "maxSupply",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    }, {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_mintAmount",
+                "type": "uint256"
+            }
+        ],
+        "name": "mint",
         "outputs": [],
         "stateMutability": "payable",
         "type": "function"
@@ -279,6 +297,42 @@
                 "internalType": "string",
                 "name": "",
                 "type": "string"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    }, {
+        "inputs": [],
+        "name": "nftPerAddressLimit",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    }, {
+        "inputs": [],
+        "name": "notRevealedUri",
+        "outputs": [
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    }, {
+        "inputs": [],
+        "name": "onlyWhitelisted",
+        "outputs": [
+            {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
             }
         ],
         "stateMutability": "view",
@@ -314,7 +368,13 @@
         "stateMutability": "view",
         "type": "function"
     }, {
-        "inputs": [],
+        "inputs": [
+            {
+                "internalType": "bool",
+                "name": "_state",
+                "type": "bool"
+            }
+        ],
         "name": "pause",
         "outputs": [],
         "stateMutability": "nonpayable",
@@ -336,6 +396,24 @@
         "name": "renounceOwnership",
         "outputs": [],
         "stateMutability": "nonpayable",
+        "type": "function"
+    }, {
+        "inputs": [],
+        "name": "reveal",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }, {
+        "inputs": [],
+        "name": "revealed",
+        "outputs": [
+            {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "stateMutability": "view",
         "type": "function"
     }, {
         "inputs": [
@@ -401,7 +479,19 @@
         "inputs": [
             {
                 "internalType": "string",
-                "name": "baseURI_",
+                "name": "_newBaseExtension",
+                "type": "string"
+            }
+        ],
+        "name": "setBaseExtension",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }, {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "_newBaseURI",
                 "type": "string"
             }
         ],
@@ -413,11 +503,59 @@
         "inputs": [
             {
                 "internalType": "uint256",
-                "name": "_price1extended_",
+                "name": "_newCost",
                 "type": "uint256"
             }
         ],
-        "name": "setPrice1",
+        "name": "setCost",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }, {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_limit",
+                "type": "uint256"
+            }
+        ],
+        "name": "setNftPerAddressLimit",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }, {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "_notRevealedURI",
+                "type": "string"
+            }
+        ],
+        "name": "setNotRevealedURI",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }, {
+        "inputs": [
+            {
+                "internalType": "bool",
+                "name": "_state",
+                "type": "bool"
+            }
+        ],
+        "name": "setOnlyWhitelisted",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }, {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_newmaxMintAmount",
+                "type": "uint256"
+            }
+        ],
+        "name": "setmaxMintAmount",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
@@ -554,16 +692,58 @@
         "stateMutability": "nonpayable",
         "type": "function"
     }, {
-        "inputs": [],
-        "name": "unpause",
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_owner",
+                "type": "address"
+            }
+        ],
+        "name": "walletOfOwner",
+        "outputs": [
+            {
+                "internalType": "uint256[]",
+                "name": "",
+                "type": "uint256[]"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    }, {
+        "inputs": [
+            {
+                "internalType": "address[]",
+                "name": "_users",
+                "type": "address[]"
+            }
+        ],
+        "name": "whitelistUsers",
         "outputs": [],
         "stateMutability": "nonpayable",
+        "type": "function"
+    }, {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "name": "whitelistedAddresses",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
         "type": "function"
     }, {
         "inputs": [],
         "name": "withdraw",
         "outputs": [],
-        "stateMutability": "nonpayable",
+        "stateMutability": "payable",
         "type": "function"
     }
 ]

@@ -63,12 +63,12 @@ function App() {
     setFeedback("Minting your Test Phunk...");
     setClaimingNft(true);
     blockchain.smartContract.methods
-      .mintNFT()
+      .mint(1)
       .send({
         gasLimit: "285000",
-        to: "0xF6Ef40B4B84423DCcE14821e77a9D08Ac94C7146",
+        to: "0x4321bcD53c61A8172C3647e1c979B2a752Da8aE4",
         from: blockchain.account,
-        value: blockchain.web3.utils.toWei((0.01 * _amount).toString(), "ether"),
+        value: blockchain.web3.utils.toWei((0.1 * _amount).toString(), "ether"),
       })
       .once("error", (err) => {
         console.log(err);
@@ -110,7 +110,7 @@ function App() {
             <s.TextTitle
               style={{ textAlign: "center", fontSize: 35, fontWeight: "bold" }}
             >
-              {data.totalSupply}/1000
+              {data.totalSupply}/100
             </s.TextTitle>
           </s.Container>
           <s.SpacerMedium />
